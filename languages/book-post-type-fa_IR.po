@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Book Post Type WordPress Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-06 13:43+0000\n"
+"PO-Revision-Date: 2019-08-07 06:56+0000\n"
+"Last-Translator: stackprogramer <stackprogramer@gmail.com>\n"
+"Language-Team: فارسی\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.2"
+
+#. Description of the plugin
+msgid "A plugin for adding book post type to wordpress"
+msgstr "افزونه ای برای افزودن نوع کتاب به وردپرس"
+
+#: book-post-type.php:27
+msgid "Add New"
+msgstr "جدید اضافه کن"
+
+#: book-post-type.php:99
+msgid "Add New Author"
+msgstr "نویسنده جدید اضافه کنید"
+
+#: book-post-type.php:26
+msgid "Add New Book"
+msgstr "کتاب جدید اضافه کنید"
+
+#: book-post-type.php:75
+msgid "Add New Publisher"
+msgstr ""
+"ناشر جدید را اضافه کنید\n"
+
+#: book-post-type.php:94
+msgid "All Authors"
+msgstr "همه نویسندگان"
+
+#: book-post-type.php:24
+msgid "All Books"
+msgstr "همه کتابها"
+
+#: book-post-type.php:70
+msgid "All Publishers"
+msgstr "همه ناشران"
+
+#: book-post-type.php:92
+msgid "Author"
+msgstr "نویسنده"
+
+#: book-post-type.php:91 book-post-type.php:101
+msgid "Authors"
+msgstr "نویسندگان"
+
+#: book-post-type.php:36
+msgid "Best Crunchify Books"
+msgstr "بهترین کتاب های Crunchify"
+
+#: book-post-type.php:21
+msgid "Book"
+msgstr "کتاب"
+
+#. Name of the plugin
+msgid "Book Post Type WordPress Plugin"
+msgstr "افزونه وردپرس  پست از دسته کتاب "
+
+#: book-post-type.php:20 book-post-type.php:22
+msgid "Books"
+msgstr "کتاب ها"
+
+#: book-post-type.php:35
+msgid "books"
+msgstr "کتاب ها"
+
+#: book-post-type.php:97
+msgid "Edit Author"
+msgstr "ویرایش نویسنده"
+
+#: book-post-type.php:28
+msgid "Edit Book"
+msgstr "ویرایش کتاب"
+
+#: book-post-type.php:73
+msgid "Edit Publisher"
+msgstr "ویرایش ناشر"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://blog.stackprogramer.xyz/"
+msgstr "https://blog.stackprogramer.xyz/"
+
+#: book-post-type.php:100
+msgid "New Author Name"
+msgstr "نام نویسنده جدید"
+
+#: book-post-type.php:76
+msgid "New Publisher Name"
+msgstr "نام ناشر جدید"
+
+#: book-post-type.php:31
+msgid "Not Found"
+msgstr "پیدا نشد"
+
+#: book-post-type.php:32
+msgid "Not found in Trash"
+msgstr "در سطل زباله یافت نشد"
+
+#: book-post-type.php:95
+msgid "Parent Author"
+msgstr "نویسنده والد"
+
+#: book-post-type.php:96
+msgid "Parent Author:"
+msgstr "نویسنده والد:"
+
+#: book-post-type.php:23
+msgid "Parent Book"
+msgstr "کتاب والد"
+
+#: book-post-type.php:71
+msgid "Parent Publisher"
+msgstr "ناشر والدین"
+
+#: book-post-type.php:72
+msgid "Parent Publisher:"
+msgstr "ناشر والد:"
+
+#: book-post-type.php:67 book-post-type.php:77
+msgid "Publishers"
+msgstr ""
+
+#: book-post-type.php:93
+msgid "Search Authors"
+msgstr ""
+
+#: book-post-type.php:30
+msgid "Search Book"
+msgstr ""
+
+#: book-post-type.php:69
+msgid "Search Publishers"
+msgstr ""
+
+#. Author of the plugin
+msgid "stackprogramer"
+msgstr ""
+
+#: book-post-type.php:98
+msgid "Update Author"
+msgstr ""
+
+#: book-post-type.php:29
+msgid "Update Book"
+msgstr ""
+
+#: book-post-type.php:74
+msgid "Update Publisher"
+msgstr ""
+
+#: book-post-type.php:25
+msgid "View Book"
+msgstr ""

@@ -1,19 +1,24 @@
 <?php
 /**
- * Plugin Name: PSR4 Book Post Type WordPress Plugin
+ * Plugin Name:  Book Post Type WordPress Plugin
  * Description: A plugin for adding book post type to wordpress
  * Plugin URI: https://blog.stackprogramer.xyz/
  * Version:     .1
  * Author:      stackprogramer
  * Author URI:  https://blog.stackprogramer.xyz/
- * License:     MIT
- * Text Domain: psr4-book-post-type
+ * License:     GPL v3
+ * Text Domain: book-post-type
  * Domain Path: /languages
  */
+/*
+* Creating a function to create our CPT book type and it's taxonomies.
+*/
 
-add_action('plugins_loaded', array(PSR4_Book_Post_Type::get_instance(), 'plugin_setup'));
 
-class  PSR4_Book_Post_Type
+//add_action('plugins_loaded', array(PSR4_Book_Post_Type::get_instance(), 'plugin_setup'));
+add_action('init', array(Book_Post_Type::get_instance(), 'plugin_setup'));
+
+class  Book_Post_Type
 {
     /**
      * Plugin instance.
@@ -58,13 +63,15 @@ class  PSR4_Book_Post_Type
     {
         $this->plugin_url = plugins_url('/', __FILE__);
         $this->plugin_path = plugin_dir_path(__FILE__);
-        $this->load_language('psr4-wordpress-plugin');
+        $this->load_language('book-post-type');
 
         spl_autoload_register(array($this, 'autoload'));
 
         // Example: Modify the Contents
-        Actions\Post::addEmojiToContents();
-		 Actions\Post::create_posttype();
+		Actions\Post::book_post_type_create_db();
+		Actions\Post::custom_book_post_type();
+		Actions\Post::custom_book_taxonomy();
+
     }
 
     /**
@@ -89,8 +96,10 @@ class  PSR4_Book_Post_Type
     public function load_language($domain)
     {
         load_plugin_textdomain($domain, FALSE, $this->plugin_path . '/languages');
+			
+
     }
-	
+
 	
 
     /**
@@ -110,3 +119,4 @@ class  PSR4_Book_Post_Type
         }
     }
 }
+
