@@ -4,10 +4,25 @@ namespace Actions;
 
 use Helper\Core;
 		
+ 
 
-class Post
+ class Post
 {
-  
+	
+	public function __construct(){
+		function call_someClass() {
+       new Post();
+}
+if ( is_admin() ) {
+    add_action( 'load-post.php',     'call_someClass' );
+    add_action( 'load-post-new.php', 'call_someClass' );
+}
+		 add_action( 'add_meta_boxes', array( $this, 'isbn_number_meta_box' ) );
+        add_action( 'save_post',      array( $this, 'save_isbn_number_meta_box_data'         ) );
+		
+		
+	}
+    
 	//Add db tables for book post type 
 	public static function book_post_type_create_db() {
 
@@ -129,6 +144,123 @@ class Post
     }
 	
 	
+	
+	public static function isbn_number_meta_box() {
+
+			add_meta_box(
+				'isbn_number',
+				__( 'ISBN Number', 'sitepoint' ),
+				array(this,'isbn_number_meta_box_callback'),
+				'books'
+			);
+			$all_post_ids = get_posts(array(
+			'fields'          => 'ids',
+			'posts_per_page'  => -1,
+			'post_type' => 'case_studies'
+		));
+}
+   
+
+   function isbn_number_meta_box_callback( $post ) {
+
+			// Add a meta box field so we can check for it later.
+			wp_nonce_field( 'isbn_number_nonce', 'isbn_number_nonce' );
+			$value = get_post_meta( $post->ID, '_isbn_number', true );
+			echo '<textarea style="width:100%" id="isbn_number" name="isbn_number">' . esc_attr( $value ) . '</textarea>';
+			printf( __( 'The post type is: %s', 'book-post-type' ), get_post_type( get_the_ID() ) );
+			//get_id_book();
+    }
+
+    //When the post is saved, saves our custom data.
+ 
+    private static function save_isbn_number_meta_box_data( $post_id ) {
+
+			// Check if our nonce is set.
+			if ( ! isset( $_POST['isbn_number_nonce'] ) ) {
+				return;
+			}
+
+			// Verify that the nonce is valid.
+			if ( ! wp_verify_nonce( $_POST['isbn_number_nonce'], 'isbn_number_nonce' ) ) {
+				return;
+			}
+
+			// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+				return;
+			}
+
+			// Check the user's permissions.
+			if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+
+				if ( ! current_user_can( 'edit_page', $post_id ) ) {
+					return;
+				}
+
+			}
+			else {
+
+				if ( ! current_user_can( 'edit_post', $post_id ) ) {
+					return;
+				}
+			}
+
+			/* OK, it's safe for us to save the data now. */
+
+			// Make sure that it is set.
+			if ( ! isset( $_POST['isbn_number'] ) ) {
+				return;
+			}
+
+			// Sanitize user input.
+			$my_data = sanitize_text_field( $_POST['isbn_number'] );
+			
+			 update_book_info( $my_data);
+			
+			
+			// Update the meta field in the database.
+			update_post_meta( $post_id, '_isbn_number', $my_data );
+    }
+
+
+    private static function update_book_info($isbn){
+		
+			global $wpdb;
+			$table_name = $wpdb->prefix . 'book_info';
+			$id=get_id_book();
+			echo $table_name;
+			
+			$sql = "INSERT INTO `$table_name` (`id`, `isbn`) VALUES ('$id', '$isbn');";
+			dbDelta($sql );
+			//$wpdb->insert( $wpdb->$table_name, array( 'isbn' => $isbn) );	
+    }
+
+    private static function get_id_book(){
+		
+			$args = array(
+			  'post_type' => 'books'
+			);
+			$the_query = new WP_Query( $args );
+			$count_books_number=$the_query->found_posts;
+			$id_current=get_the_ID();
+			$flag_increment=true;
+			
+			$loop = new WP_Query( array( 'post_type' => 'books', 'posts_per_page' => 100 ) ); 
+			$id_book=1;
+			while ( $loop->have_posts() ) : $loop->the_post(); 
+				if($flag_increment && $id_current!=get_the_ID()){
+				$id_book++;
+				}
+				else{
+				$flag_increment=false;
+					}
+				$id=get_the_ID();
+				the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '" rel="bookmark">', '</a></h2>' );
+				//echo'<div class="entry-content">'.the_content().'</div>';
+			endwhile; 
+			//echo 'The id current book is'.($count_books_number-$id_book+1);
+			return $count_books_number-$id_book+1;
+    }
 	
 	
 	

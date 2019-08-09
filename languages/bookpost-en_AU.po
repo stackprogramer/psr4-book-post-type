@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Book Post Type WordPress Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-09 06:00+0000\n"
+"PO-Revision-Date: 2019-08-09 06:08+0000\n"
+"Last-Translator: stackprogramer <stackprogramer@gmail.com>\n"
+"Language-Team: English (Australia)\n"
+"Language: en_AU\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.2"
+
+#. Description of the plugin
+msgid "A plugin for adding book post type to wordpress"
+msgstr "A plugin for adding book post type to wordpress"
+
+#: book-post-type.php:66
+msgid "Add New"
+msgstr "Add New"
+
+#: book-post-type.php:138
+msgid "Add New Author"
+msgstr "Add New Author"
+
+#: book-post-type.php:65
+msgid "Add New Book"
+msgstr "Add New Book"
+
+#: book-post-type.php:114
+msgid "Add New Publisher"
+msgstr "Add New Publisher"
+
+#: book-post-type.php:133
+msgid "All Authors"
+msgstr "All Authors"
+
+#: book-post-type.php:63
+msgid "All Books"
+msgstr "All Books"
+
+#: book-post-type.php:109
+msgid "All Publishers"
+msgstr "All Publishers"
+
+#: book-post-type.php:61 book-post-type.php:131 book-post-type.php:181
+msgid "Author"
+msgstr "Author"
+
+#: book-post-type.php:130 book-post-type.php:140
+msgid "Authors"
+msgstr "Authors"
+
+#: book-post-type.php:75
+msgid "Best Crunchify Books"
+msgstr "Best Crunchify Books"
+
+#: book-post-type.php:60
+msgid "Book"
+msgstr "Book"
+
+#. Name of the plugin
+msgid "Book Post Type WordPress Plugin"
+msgstr "Book Post Type WordPress Plugin"
+
+#: book-post-type.php:59
+msgid "Books"
+msgstr "Books"
+
+#: book-post-type.php:74
+msgid "books"
+msgstr "books"
+
+#: book-post-type.php:136
+msgid "Edit Author"
+msgstr "Edit Author"
+
+#: book-post-type.php:67
+msgid "Edit Book"
+msgstr "Edit Book"
+
+#: book-post-type.php:112
+msgid "Edit Publisher"
+msgstr "Edit Publisher"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://blog.stackprogramer.xyz/"
+msgstr ""
+"https://blog.stackprogramer.xyz/\n"
+
+#: book-post-type.php:139
+msgid "New Author Name"
+msgstr "New Author Name"
+
+#: book-post-type.php:115
+msgid "New Publisher Name"
+msgstr "New Publisher Name"
+
+#: book-post-type.php:70
+msgid "Not Found"
+msgstr "Not Found"
+
+#: book-post-type.php:71
+msgid "Not found in Trash"
+msgstr "Not found in Trash"
+
+#: book-post-type.php:134
+msgid "Parent Author"
+msgstr "Parent Author"
+
+#: book-post-type.php:135
+msgid "Parent Author:"
+msgstr "Parent Author:"
+
+#: book-post-type.php:62
+msgid "Parent Book"
+msgstr "Parent Book"
+
+#: book-post-type.php:110
+msgid "Parent Publisher"
+msgstr "Parent Publisher"
+
+#: book-post-type.php:111
+msgid "Parent Publisher:"
+msgstr "Parent Publisher:"
+
+#: book-post-type.php:106 book-post-type.php:116
+msgid "Publishers"
+msgstr "Publishers"
+
+#: book-post-type.php:132
+msgid "Search Authors"
+msgstr "Search Authors"
+
+#: book-post-type.php:69
+msgid "Search Book"
+msgstr "Search Book"
+
+#: book-post-type.php:108
+msgid "Search Publishers"
+msgstr "Search Publishers"
+
+#. Author of the plugin
+msgid "stackprogramer"
+msgstr "stackprogramer"
+
+#: book-post-type.php:137
+msgid "Update Author"
+msgstr "Update Author"
+
+#: book-post-type.php:68
+msgid "Update Book"
+msgstr "Update Book"
+
+#: book-post-type.php:113
+msgid "Update Publisher"
+msgstr "Update Publisher"
+
+#: book-post-type.php:64
+msgid "View Book"
+msgstr "View Book"
