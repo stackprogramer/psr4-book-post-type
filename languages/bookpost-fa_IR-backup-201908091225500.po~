@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Book Post Type WordPress Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-09 12:24+0000\n"
-"PO-Revision-Date: 2019-08-09 12:25+0000\n"
+"POT-Creation-Date: 2019-08-09 12:20+0000\n"
+"PO-Revision-Date: 2019-08-09 12:21+0000\n"
 "Last-Translator: stackprogramer <stackprogramer@gmail.com>\n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -22,7 +22,7 @@ msgstr "کتاب ها"
 msgid "ISBN"
 msgstr "شابک"
 
-#: book-post-type.php:61 book-post-type.php:290 book-post-type.php:295
+#: book-post-type.php:61
 msgid "ISBN numbers"
 msgstr "شماره های شابک"
 
@@ -156,12 +156,20 @@ msgstr "نام نویسنده جدید"
 
 #: book-post-type.php:162
 msgid "ISBN Number"
-msgstr "شماره شابک"
+msgstr ""
 
 #: book-post-type.php:183
 #, php-format
 msgid "The post type is: %s"
-msgstr "نوع پست %s است"
+msgstr ""
+
+#: book-post-type.php:290
+msgid "isbn books"
+msgstr ""
+
+#: book-post-type.php:295
+msgid "bo"
+msgstr ""
 
 #. Name of the plugin
 msgid "Book Post Type WordPress Plugin"

@@ -57,8 +57,10 @@ function custom_book_post_type() {
  
  $labels = array(
 		'name'                =>__( 'Books','bookpost'),
+		'isbn'                =>__( 'ISBN','bookpost'),
+		'isbn_number'                =>__( 'ISBN numbers','bookpost'),
 		'singular_name'       => __( 'Book','bookpost'),
-		'menu_name'           => __('Books','bookpost'),
+		'menu_name'           =>  __('Books','bookpost'),
 		'parent_item_colon'   => __( 'Parent Book','bookpost'),
 		'all_items'           => __( 'All Books','bookpost'),
 		'view_item'           => __( 'View Book','bookpost'),
@@ -89,6 +91,8 @@ function custom_book_post_type() {
 		'capability_type'     => 'page'
 );
 	register_post_type( 'books', $args );
+	
+	
 	
  
 }
@@ -155,7 +159,7 @@ function isbn_number_meta_box() {
 
     add_meta_box(
         'isbn_number',
-        __( 'ISBN Number', 'sitepoint' ),
+        __( 'ISBN Number', 'bookpost' ),
         'isbn_number_meta_box_callback',
         'books'
     );
@@ -176,12 +180,8 @@ function isbn_number_meta_box_callback( $post ) {
     $value = get_post_meta( $post->ID, '_isbn_number', true );
 
     echo '<textarea style="width:100%" id="isbn_number" name="isbn_number">' . esc_attr( $value ) . '</textarea>';
-	printf( __( 'The post type is: %s', 'textdomain' ), get_post_type( get_the_ID() ) );
+	printf( __( 'The post type is: %s', 'bookpost' ), get_post_type( get_the_ID() ) );
     get_id_book();
-	
-	
-	
-
 
 
 }
@@ -283,5 +283,26 @@ function get_id_book(){
 	return $count_books_number-$id_book+1;
 	
 }
+
+add_action('admin_menu', 'book_type_plugin_setup_menu');
+ 
+function book_type_plugin_setup_menu(){
+		add_menu_page( 'ISBN Plugin Page', __( 'ISBN numbers','bookpost'), 'manage_options', 'bookpost', 'test_init' );
+		
+}
+ 
+function test_init(){
+                    echo  '<h1>'.__( 'ISBN numbers','bookpost').'</h1>';
+					global $wpdb;
+		            $table_name = $wpdb->prefix . 'book_info';
+				    $books= $wpdb->get_results("SELECT * FROM `$table_name`");
+				   
+		            foreach($books as $row){ 
+					$book=$row; 
+					echo $book->id.':'.$book->isbn.'<hr>';
+					}
+					
+}
+
 
 

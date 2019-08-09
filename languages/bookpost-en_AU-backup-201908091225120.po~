@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Book Post Type WordPress Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-09 12:24+0000\n"
-"PO-Revision-Date: 2019-08-09 12:25+0000\n"
+"POT-Creation-Date: 2019-08-09 12:20+0000\n"
+"PO-Revision-Date: 2019-08-09 12:23+0000\n"
 "Last-Translator: stackprogramer <stackprogramer@gmail.com>\n"
-"Language-Team: فارسی\n"
-"Language: fa_IR\n"
+"Language-Team: English (Australia)\n"
+"Language: en_AU\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,166 +16,175 @@ msgstr ""
 
 #: book-post-type.php:59 book-post-type.php:63
 msgid "Books"
-msgstr "کتاب ها"
+msgstr "Books"
 
 #: book-post-type.php:60
 msgid "ISBN"
 msgstr "شابک"
 
-#: book-post-type.php:61 book-post-type.php:290 book-post-type.php:295
+#: book-post-type.php:61
 msgid "ISBN numbers"
 msgstr "شماره های شابک"
 
 #: book-post-type.php:62
 msgid "Book"
-msgstr "کتاب"
+msgstr "Book"
 
 #: book-post-type.php:64
 msgid "Parent Book"
-msgstr "کتاب والد"
+msgstr "Parent Book"
 
 #: book-post-type.php:65
 msgid "All Books"
-msgstr "همه کتابها"
+msgstr "All Books"
 
 #: book-post-type.php:66
 msgid "View Book"
-msgstr "مشاهده کتاب"
+msgstr "View Book"
 
 #: book-post-type.php:67
 msgid "Add New Book"
-msgstr "کتاب جدید اضافه کنید"
+msgstr "Add New Book"
 
 #: book-post-type.php:68
 msgid "Add New"
-msgstr "اضافه کردن مورد جدید"
+msgstr "Add New"
 
 #: book-post-type.php:69
 msgid "Edit Book"
-msgstr "ویرایش کتاب"
+msgstr "Edit Book"
 
 #: book-post-type.php:70
 msgid "Update Book"
-msgstr "کتاب را به روز کنید"
+msgstr "Update Book"
 
 #: book-post-type.php:71
 msgid "Search Book"
-msgstr "جستجوی کتاب"
+msgstr "Search Book"
 
 #: book-post-type.php:72
 msgid "Not Found"
-msgstr "پیدا نشد"
+msgstr "Not Found"
 
 #: book-post-type.php:73
 msgid "Not found in Trash"
-msgstr "در سطل زباله یافت نشد"
+msgstr "Not found in Trash"
 
 #: book-post-type.php:76
 msgid "books"
-msgstr "کتاب ها"
+msgstr "books"
 
 #: book-post-type.php:77
 msgid "Best Crunchify Books"
-msgstr "بهترین کتاب های Crunchify"
+msgstr "Best Crunchify Books"
 
 #: book-post-type.php:110 book-post-type.php:120
 msgid "Publishers"
-msgstr "ناشران"
+msgstr "Publishers"
 
 #: book-post-type.php:112
 msgid "Search Publishers"
-msgstr "جستجوی ناشران"
+msgstr "Search Publishers"
 
 #: book-post-type.php:113
 msgid "All Publishers"
-msgstr "همه ناشران"
+msgstr "All Publishers"
 
 #: book-post-type.php:114
 msgid "Parent Publisher"
-msgstr "ناشر والد"
+msgstr "Parent Publisher"
 
 #: book-post-type.php:115
 msgid "Parent Publisher:"
-msgstr "ناشر والد:"
+msgstr "Parent Publisher:"
 
 #: book-post-type.php:116
 msgid "Edit Publisher"
-msgstr "ویرایش ناشر"
+msgstr "Edit Publisher"
 
 #: book-post-type.php:117
 msgid "Update Publisher"
-msgstr "ناشر را به روز کنید"
+msgstr "Update Publisher"
 
 #: book-post-type.php:118
 msgid "Add New Publisher"
-msgstr "ناشر جدید را اضافه کنید"
+msgstr "Add New Publisher"
 
 #: book-post-type.php:119
 msgid "New Publisher Name"
-msgstr "نام ناشر جدید"
+msgstr "New Publisher Name"
 
 #: book-post-type.php:134 book-post-type.php:144
 msgid "Authors"
-msgstr "نویسندگان"
+msgstr "Authors"
 
 #: book-post-type.php:135
 msgid "Author"
-msgstr "نویسنده"
+msgstr "Author"
 
 #: book-post-type.php:136
 msgid "Search Authors"
-msgstr "جستجوی نویسندگان"
+msgstr "Search Authors"
 
 #: book-post-type.php:137
 msgid "All Authors"
-msgstr "همه نویسندگان"
+msgstr "All Authors"
 
 #: book-post-type.php:138
 msgid "Parent Author"
-msgstr "نویسنده والد"
+msgstr "Parent Author"
 
 #: book-post-type.php:139
 msgid "Parent Author:"
-msgstr "نویسنده والد:"
+msgstr "Parent Author:"
 
 #: book-post-type.php:140
 msgid "Edit Author"
-msgstr "ویرایش نویسنده"
+msgstr "Edit Author"
 
 #: book-post-type.php:141
 msgid "Update Author"
-msgstr "نویسنده را به روز کنید"
+msgstr "Update Author"
 
 #: book-post-type.php:142
 msgid "Add New Author"
-msgstr "نویسنده جدید اضافه کنید"
+msgstr "Add New Author"
 
 #: book-post-type.php:143
 msgid "New Author Name"
-msgstr "نام نویسنده جدید"
+msgstr "New Author Name"
 
 #: book-post-type.php:162
 msgid "ISBN Number"
-msgstr "شماره شابک"
+msgstr "ISBN Number"
 
 #: book-post-type.php:183
 #, php-format
 msgid "The post type is: %s"
-msgstr "نوع پست %s است"
+msgstr "The post type is: %s"
+
+#: book-post-type.php:290
+msgid "isbn books"
+msgstr "isbn books"
+
+#: book-post-type.php:295
+msgid "bo"
+msgstr ""
 
 #. Name of the plugin
 msgid "Book Post Type WordPress Plugin"
-msgstr "  افزونه وردپرس نوع پست کتاب "
+msgstr "Book Post Type WordPress Plugin"
 
 #. Description of the plugin
 msgid "A plugin for adding book post type to wordpress"
-msgstr "افزونه ای برای افزودن نوع ارسال کتاب به وردپرس"
+msgstr "A plugin for adding book post type to wordpress"
 
 #. URI of the plugin
 #. Author URI of the plugin
 msgid "https://blog.stackprogramer.xyz/"
-msgstr "https://blog.stackprogramer.xyz/"
+msgstr ""
+"https://blog.stackprogramer.xyz/\n"
 
 #. Author of the plugin
 msgid "stackprogramer"
-msgstr "استک پروگرمر"
+msgstr "stackprogramer"
