@@ -1,5 +1,8 @@
 <?php
-
+/* Post class definition
+ * 
+ *
+*/
 namespace Actions;
 
 use Helper\Core;
@@ -8,22 +11,12 @@ use Helper\Core;
 
  class Post
 {
-	
+	//Construct function for Post class
 	public function __construct(){
-		function call_someClass() {
-       new Post();
-}
-if ( is_admin() ) {
-    add_action( 'load-post.php',     'call_someClass' );
-    add_action( 'load-post-new.php', 'call_someClass' );
-}
-		 add_action( 'add_meta_boxes', array( $this, 'isbn_number_meta_box' ) );
-        add_action( 'save_post',      array( $this, 'save_isbn_number_meta_box_data'         ) );
-		
-		
+			
 	}
     
-	//Add db tables for book post type 
+	//Add db tables for book post type to  wordpress database
 	public static function book_post_type_create_db() {
 
 		global $wpdb;
@@ -56,24 +49,26 @@ if ( is_admin() ) {
     //Add custom book type to wordpress
 	public static function custom_book_post_type() {
 
-		$labels = array(
-			'name'                => __( 'Books','book-post-type'),
-			'singular_name'       => __( 'Book','book-post-type'),
-			'menu_name'           => __( 'Books','book-post-type'),
-			'parent_item_colon'   => __( 'Parent Book','book-post-type'),
-			'all_items'           => __( 'All Books','book-post-type'),
-			'view_item'           => __( 'View Book','book-post-type'),
-			'add_new_item'        => __( 'Add New Book','book-post-type'),
-			'add_new'             => __( 'Add New','book-post-type'),
-			'edit_item'           => __( 'Edit Book','book-post-type'),
-			'update_item'         => __( 'Update Book','book-post-type'),
-			'search_items'        => __( 'Search Book','book-post-type'),
-			'not_found'           => __( 'Not Found','book-post-type'),
-			'not_found_in_trash'  => __( 'Not found in Trash','book-post-type')
+			$labels = array(
+			'name'                =>__( 'Books','bookpost'),
+			'isbn'                =>__( 'ISBN','bookpost'),
+			'isbn_number'                =>__( 'ISBN numbers','bookpost'),
+			'singular_name'       => __( 'Book','bookpost'),
+			'menu_name'           =>  __('Books','bookpost'),
+			'parent_item_colon'   => __( 'Parent Book','bookpost'),
+			'all_items'           => __( 'All Books','bookpost'),
+			'view_item'           => __( 'View Book','bookpost'),
+			'add_new_item'        => __( 'Add New Book','bookpost'),
+			'add_new'             => __( 'Add New','bookpost'),
+			'edit_item'           => __( 'Edit Book','bookpost'),
+			'update_item'         => __( 'Update Book','bookpost'),
+			'search_items'        => __( 'Search Book','bookpost'),
+			'not_found'           => __( 'Not Found','bookpost'),
+			'not_found_in_trash'  => __( 'Not found in Trash','bookpost')
 		);
 		$args = array(
-			'label'               => __( 'books','book-post-type'),
-			'description'         => __( 'Best Crunchify Books','book-post-type'),
+			'label'               => __( 'books','bookpost'),
+			'description'         => __( 'Best Crunchify Books','bookpost'),
 			'labels'              => $labels,
 			'supports'            => array( 'title','excerpt'),
 			'public'              => true,
@@ -88,25 +83,26 @@ if ( is_admin() ) {
 				'yarpp_support'       => true,
 			'publicly_queryable'  => true,
 			'capability_type'     => 'page'
-		);
+	    );
 		register_post_type( 'books', $args );
+	
 
 	}
  
     //Add custom taxonomy for  book  custom type
     public static function custom_book_taxonomy() {
-		   $labels = array(
-			'name' => __( 'Publishers','book-post-type' ),
-			'singular_name' => _x( 'Publisher','book-post-type' ),
-			'search_items' =>  __( 'Search Publishers','book-post-type' ),
-			'all_items' => __( 'All Publishers','book-post-type' ),
-			'parent_item' => __( 'Parent Publisher','book-post-type' ),
-			'parent_item_colon' => __( 'Parent Publisher:','book-post-type' ),
-			'edit_item' => __( 'Edit Publisher','book-post-type'), 
-			'update_item' => __( 'Update Publisher','book-post-type' ),
-			'add_new_item' => __( 'Add New Publisher','book-post-type' ),
-			'new_item_name' => __( 'New Publisher Name','book-post-type' ),
-			'menu_name' => __( 'Publishers','book-post-type' ),
+				   $labels = array(
+			'name' => __( 'Publishers','bookpost' ),
+			'singular_name' => _x( 'Publisher','bookpost' ),
+			'search_items' =>  __( 'Search Publishers','bookpost' ),
+			'all_items' => __( 'All Publishers','bookpost' ),
+			'parent_item' => __( 'Parent Publisher','bookpost' ),
+			'parent_item_colon' => __( 'Parent Publisher:','bookpost' ),
+			'edit_item' => __( 'Edit Publisher','bookpost'), 
+			'update_item' => __( 'Update Publisher','bookpost' ),
+			'add_new_item' => __( 'Add New Publisher','bookpost' ),
+			'new_item_name' => __( 'New Publisher Name','bookpost' ),
+			'menu_name' => __( 'Publishers','bookpost' ),
 		  ); 	
 		 
 		  register_taxonomy('Publishers',array('books'), array(
@@ -120,17 +116,17 @@ if ( is_admin() ) {
 		  
 		  
 		   $labels = array(
-			'name' => __( 'Authors', 'book-post-type' ),
-			'singular_name' => __( 'Author' ,'book-post-type' ),
-			'search_items' =>  __( 'Search Authors' ,'book-post-type'),
-			'all_items' => __( 'All Authors','book-post-type' ),
-			'parent_item' => __( 'Parent Author' ,'book-post-type'),
-			'parent_item_colon' => __( 'Parent Author:','book-post-type' ),
-			'edit_item' => __( 'Edit Author','book-post-type' ), 
-			'update_item' => __( 'Update Author','book-post-type' ),
-			'add_new_item' => __( 'Add New Author' ,'book-post-type'),
-			'new_item_name' => __( 'New Author Name' ,'book-post-type'),
-			'menu_name' => __( 'Authors' ,'book-post-type'),
+			'name' => __( 'Authors', 'bookpost' ),
+			'singular_name' => __( 'Author' ,'bookpost' ),
+			'search_items' =>  __( 'Search Authors' ,'bookpost'),
+			'all_items' => __( 'All Authors','bookpost' ),
+			'parent_item' => __( 'Parent Author' ,'bookpost'),
+			'parent_item_colon' => __( 'Parent Author:','bookpost' ),
+			'edit_item' => __( 'Edit Author','bookpost' ), 
+			'update_item' => __( 'Update Author','bookpost' ),
+			'add_new_item' => __( 'Add New Author' ,'bookpost'),
+			'new_item_name' => __( 'New Author Name' ,'bookpost'),
+			'menu_name' => __( 'Authors' ,'bookpost'),
 		  ); 	
 		 
 		  register_taxonomy('Authors',array('books'), array(
@@ -143,125 +139,112 @@ if ( is_admin() ) {
 		  ));
     }
 	
+	 // Add meta box to post type
+	 function isbn_number_meta_box() {
+
+		add_meta_box(
+			'isbn_number',
+			__( 'ISBN Number', 'bookpost' ),
+			 array($this,'isbn_number_meta_box_callback'),
+			'books'
+		);
+		$all_post_ids = get_posts(array(
+		'fields'          => 'ids',
+		'posts_per_page'  => -1,
+		'post_type' => 'case_studies'
+	     ));
+	}
+     
+	  // call back function definiton for meta box
+	 function isbn_number_meta_box_callback( $post ) {
+
+		// Add a nonce field so we can check for it later.
+		wp_nonce_field( 'isbn_number_nonce', 'isbn_number_nonce' );
+
+		$value = get_post_meta( $post->ID, '_isbn_number', true );
+
+		echo '<textarea style="width:100%" id="isbn_number" name="isbn_number">' . esc_attr( $value ) . '</textarea>';
+		printf( __( 'The post type is: %s', 'bookpost' ), get_post_type( get_the_ID() ) );
+   }
 	
 	
-	public static function isbn_number_meta_box() {
+	 //Add save function to meta box
+	function save_isbn_number_meta_box_data( $post_id ) {
 
-			add_meta_box(
-				'isbn_number',
-				__( 'ISBN Number', 'sitepoint' ),
-				array(this,'isbn_number_meta_box_callback'),
-				'books'
-			);
-			$all_post_ids = get_posts(array(
-			'fields'          => 'ids',
-			'posts_per_page'  => -1,
-			'post_type' => 'case_studies'
-		));
-}
-   
+		/* OK, it's safe for us to save the data now. */
 
-   function isbn_number_meta_box_callback( $post ) {
+		// Make sure that it is set.
+		if ( ! isset( $_POST['isbn_number'] ) ) {
+			return;
+		}
 
-			// Add a meta box field so we can check for it later.
-			wp_nonce_field( 'isbn_number_nonce', 'isbn_number_nonce' );
-			$value = get_post_meta( $post->ID, '_isbn_number', true );
-			echo '<textarea style="width:100%" id="isbn_number" name="isbn_number">' . esc_attr( $value ) . '</textarea>';
-			printf( __( 'The post type is: %s', 'book-post-type' ), get_post_type( get_the_ID() ) );
-			//get_id_book();
-    }
-
-    //When the post is saved, saves our custom data.
- 
-    private static function save_isbn_number_meta_box_data( $post_id ) {
-
-			// Check if our nonce is set.
-			if ( ! isset( $_POST['isbn_number_nonce'] ) ) {
-				return;
-			}
-
-			// Verify that the nonce is valid.
-			if ( ! wp_verify_nonce( $_POST['isbn_number_nonce'], 'isbn_number_nonce' ) ) {
-				return;
-			}
-
-			// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-				return;
-			}
-
-			// Check the user's permissions.
-			if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
-
-				if ( ! current_user_can( 'edit_page', $post_id ) ) {
-					return;
-				}
-
-			}
-			else {
-
-				if ( ! current_user_can( 'edit_post', $post_id ) ) {
-					return;
-				}
-			}
-
-			/* OK, it's safe for us to save the data now. */
-
-			// Make sure that it is set.
-			if ( ! isset( $_POST['isbn_number'] ) ) {
-				return;
-			}
-
-			// Sanitize user input.
-			$my_data = sanitize_text_field( $_POST['isbn_number'] );
-			
-			 update_book_info( $my_data);
-			
-			
-			// Update the meta field in the database.
-			update_post_meta( $post_id, '_isbn_number', $my_data );
-    }
-
-
-    private static function update_book_info($isbn){
+		// Sanitize user input.
+		$my_data = sanitize_text_field( $_POST['isbn_number'] );
 		
-			global $wpdb;
-			$table_name = $wpdb->prefix . 'book_info';
-			$id=get_id_book();
-			echo $table_name;
-			
-			$sql = "INSERT INTO `$table_name` (`id`, `isbn`) VALUES ('$id', '$isbn');";
-			dbDelta($sql );
-			//$wpdb->insert( $wpdb->$table_name, array( 'isbn' => $isbn) );	
-    }
-
-    private static function get_id_book(){
+		 $this->update_book_info( $my_data);
 		
-			$args = array(
-			  'post_type' => 'books'
-			);
-			$the_query = new WP_Query( $args );
-			$count_books_number=$the_query->found_posts;
-			$id_current=get_the_ID();
-			$flag_increment=true;
-			
-			$loop = new WP_Query( array( 'post_type' => 'books', 'posts_per_page' => 100 ) ); 
-			$id_book=1;
-			while ( $loop->have_posts() ) : $loop->the_post(); 
-				if($flag_increment && $id_current!=get_the_ID()){
-				$id_book++;
+		
+		// Update the meta field in the database.
+		update_post_meta( $post_id, '_isbn_number', $my_data );
+	}
+	
+	//Add action for save meta box
+    function add_save(){
+     add_action( 'save_post', array($this,'save_isbn_number_meta_box_data') );
+	}
+    //Update book_info table for plugin
+	function update_book_info($isbn){
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'book_info';
+		$id=$this->get_id_book();
+		echo $table_name;
+		
+		$sql = "INSERT INTO `$table_name` (`id`, `isbn`) VALUES ('$id', '$isbn');";
+		dbDelta($sql );
+	}
+	
+    //Return id book according book info table
+	function get_id_book(){
+		$args = array(
+		  'post_type' => 'books'
+		);
+		$the_query = new \WP_Query( $args );
+		$count_books_number=$the_query->found_posts;
+		$id_current=get_the_ID();
+		$flag_increment=true;
+		
+		$loop = new \WP_Query( array( 'post_type' => 'books', 'posts_per_page' => 100 ) ); 
+		$id_book=1;
+		while ( $loop->have_posts() ) : $loop->the_post(); 
+			if($flag_increment && $id_current!=get_the_ID()){
+			$id_book++;
+			}
+			else{
+			$flag_increment=false;
 				}
-				else{
-				$flag_increment=false;
-					}
-				$id=get_the_ID();
-				the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '" rel="bookmark">', '</a></h2>' );
-				//echo'<div class="entry-content">'.the_content().'</div>';
-			endwhile; 
-			//echo 'The id current book is'.($count_books_number-$id_book+1);
-			return $count_books_number-$id_book+1;
-    }
-	
-	
-	
+			$id=get_the_ID();
+			the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '" rel="bookmark">', '</a></h2>' );
+		endwhile; 
+		return $count_books_number-$id_book+1;	
+	}
+
+    //Add isbn number page to admin
+	function book_type_plugin_setup_menu(){
+			add_menu_page( 'ISBN Plugin Page', __( 'ISBN numbers','bookpost'), 'manage_options', 'bookpost',array($this,'isbn_numbers_page_init'));
+			
+	}
+    //Function display isbn number in menu page
+	function isbn_numbers_page_init(){
+		echo  '<h1>'.__( 'ISBN numbers','bookpost').'</h1>';
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'book_info';
+		$books= $wpdb->get_results("SELECT * FROM `$table_name`");
+	   
+		foreach($books as $row){ 
+		$book=$row; 
+		echo $book->id.':'.$book->isbn.'<hr>';
+		}
+						
+	}
+		
 }
